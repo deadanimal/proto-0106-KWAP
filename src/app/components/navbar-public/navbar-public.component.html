@@ -1,0 +1,73 @@
+<nav class="navbar navbar-top navbar-expand navbar-dark bg-default border-bottom" id="navbar-main">
+	<div class="container-fluid">
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<!-- Search form -->
+			<!--
+			<form class="navbar-search navbar-search-light form-inline mr-sm-3" id="navbar-search-main">
+				<div class="form-group mb-0" [ngClass]="{ focused: focus === true }">
+					<div class="input-group input-group-alternative input-group-merge">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-search"></i></span>
+						</div>
+						<input 
+							class="form-control" 
+							placeholder="Search" 
+							type="text" 
+							(focus)="focus = true"
+							(blur)="focus = false" 
+						/>
+					</div>
+				</div>
+
+				<button type="button" class="close" (click)="closeSearch()" data-action="search-close"
+					data-target="#navbar-search-main" aria-label="Close">
+					<span aria-hidden="true">×</span>
+				</button>
+			</form>
+			-->
+			<!-- Navbar links -->
+			<ul class="navbar-nav align-items-center ml-auto ml-md-0">
+				<li class="nav-item dropdown" dropdown placement="bottom-right">
+					<div class="media-body ml-2 d-none d-lg-block">
+						<a class="dropdown-item" (click)="navigatePage('login')">
+							<span>Home </span>
+						</a>
+					</div>
+				</li>
+				<li class="nav-item dropdown" dropdown placement="bottom-right">
+					<div class="media-body ml-2 d-none d-lg-block">
+						<a class="dropdown-item" (click)="navigatePage('home')">
+							<span>About Us </span>
+						</a>
+					</div>
+				</li>
+			</ul>
+
+			<a [routerLink]="['/pages/home']">sini</a>
+			
+			<!-- User -->
+			<ul class="navbar-nav align-items-center ml-auto ml-md-0">
+				<li class="nav-item dropdown" dropdown placement="bottom-right">
+					<a class="nav-link pr-0 dropdown-toggle" role="button" dropdownToggle>
+						<div class="media align-items-center">
+							<div class="media-body ml-2 d-none d-lg-block">
+								<span class="mb-0 text-sm  font-weight-bold"><i class="fas fa-user text-white" aria-hidden="true"></i>
+									Login/Sign-up
+								</span>
+							</div>
+						</div>
+					</a>
+					<div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right" *dropdownMenu>
+						<a class="dropdown-item" (click)="navigatePage('login')">
+							<i class="fas fa-user fa-fw"></i> <span>Login</span>
+						</a>
+						<a class="dropdown-item" (click)="navigatePage('signup')">
+							<i class="fas fa-cogs fa-fw"></i> <span>Sign Up</span>
+						</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>
+<div *ngIf="sidenavOpen === true" class="backdrop d-xl-none" (click)="toggleSidenav()"></div>

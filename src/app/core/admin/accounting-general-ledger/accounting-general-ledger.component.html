@@ -1,0 +1,207 @@
+<div class="header">
+  <div class="container-fluid">
+    <div class="header-body">
+      <div class="row align-items-center py-4">
+        <div class="col-lg-6 col-7">
+          <h6 class="h2 text-dark d-inline-block mb-0">Accounting</h6>
+
+          <nav aria-label="breadcrumb" class=" d-none d-md-inline-block ml-md-4">
+            <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+              <li class=" breadcrumb-item">
+                <a href="javascript:void(0)"> <i class="fas fa-file-invoice text-dark"> </i> </a>
+              </li>
+              <li class="breadcrumb-item">
+                <a href="javascript:void(0)" class="text-dark"> General Ledger </a>
+              </li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid mt-2">
+  <div class="card">
+    <div class="card-header bg-secondary">
+      <div class="row">
+        <div class="col">
+          <h3>Report Date</h3>
+        </div>
+      </div>
+      <div class="row input-daterange datepicker align-items-center">
+        <div class="col-6">
+          <div class="form-group">
+            <label class="form-control-label">Date range</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+              </div>
+              <input type="text" class="form-control" bsDaterangepicker [bsConfig]="bsDPConfig" placeholder="Date range"
+                name="bsDaterangepicker">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class=" table-responsive">
+      <table class=" table align-items-center table-flush">
+        <thead class=" thead-light">
+          <tr>
+            <th class=" sort" data-sort="code" scope="col">Code</th>
+
+            <th class=" sort" data-sort="name" scope="col">Name</th>
+
+            <th class=" sort" data-sort="opening_balance" scope="col">Opening Balance(RM)</th>
+
+            <th class=" sort" data-sort="date" scope="col">Date</th>
+
+            <th class=" sort" data-sort="credit" scope="col">Credit(RM)</th>
+
+            <th class=" sort" data-sort="change" scope="col">Net Change(RM)</th>
+
+            <th class=" sort" data-sort="closing_balance" scope="col">Closing Balance(RM)</th>
+
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let row of rows">
+            <th scope="row">{{row.code}}</th>
+            <td>{{row.name}}</td>
+            <td>{{row.opening_balance}}</td>
+            <td>{{row.date}}</td>
+            <td>{{row.credit}}</td>
+            <td>{{row.change}}</td>
+            <td>{{row.closing_balance}}</td>
+            <td> <button class="btn btn-sm btn-primary" (click)="viewData(row)">View</button>
+              <button class="btn btn-danger btn-sm btn-danger" (click)="deleteData(row)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid mt-2">
+  <div class="row">
+    <div class="col-xl-8">
+      <div class="card">
+        <div class="card-header bg-secondary">
+          <div class="row align-items-center">
+            <div class="col">
+              <h6 class="text-muted text-uppercase ls-1 mb-1">Chart</h6>
+
+              <h5 class="h3 mb-0">Report 1</h5>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-body">
+          <div class="chart">
+            <div class="amchart" id="lineChart"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-4">
+      <div class="card">
+        <div class="card-header bg-secondary">
+          <div class="row align-items-center">
+            <div class="col">
+              <h6 class="text-muted text-uppercase ls-1 mb-1">Chart</h6>
+
+              <h5 class="h3 mb-0">Report 2</h5>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-body">
+          <div class="chart">
+            <div class="amchart" id="pieChart"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- The Modal -->
+<div class="modal" id="myModal" [style.display]="showModal ? 'block' : 'none'">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header bg-default">
+        <h4 class="modal-title text-white my-auto">Account Ledger Details</h4>
+        <button type="button" class="close" data-dismiss="modal" (click)="hide()">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <div class="input-form mb-2">
+          <label class="form-control-label">
+            Code
+          </label>
+          <input class="form-control" style="border:none !important; border-bottom: 1px solid #6373839d !important;"
+            placeholder={{code}} type="text" />
+        </div>
+        <div class="input-form mb-2">
+          <label class="form-control-label">
+            Name
+          </label>
+          <input class="form-control" style="border:none !important; border-bottom: 1px solid #6373839d !important;"
+            placeholder={{name}} type="text" />
+        </div>
+        <div class="input-form mb-2">
+          <label class="form-control-label">
+            Opening Balance(RM)
+          </label>
+          <input class="form-control" style="border:none !important; border-bottom: 1px solid #6373839d !important;"
+            placeholder={{opening_balance}} type="text" />
+        </div>
+        <div class="input-form mb-2">
+          <label class="form-control-label">
+            Date
+          </label>
+          <input class="form-control" style="border:none !important; border-bottom: 1px solid #6373839d !important;"
+            placeholder={{date}} type="text" />
+        </div>
+        <div class="input-form mb-2">
+          <label class="form-control-label">
+            Credit(RM)
+          </label>
+          <input class="form-control" style="border:none !important; border-bottom: 1px solid #6373839d !important;"
+            placeholder={{credit}} type="text" />
+        </div>
+        <div class="input-form mb-2">
+          <label class="form-control-label">
+            Net Change(RM)
+          </label>
+          <input class="form-control" style="border:none !important; border-bottom: 1px solid #6373839d !important;"
+            placeholder={{change}} type="text" />
+        </div>
+        <div class="input-form mb-2">
+          <label class="form-control-label">
+            Closing Balance(RM)
+          </label>
+          <input class="form-control" style="border:none !important; border-bottom: 1px solid #6373839d !important;"
+            placeholder={{closing_balance}} type="text" />
+        </div>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="row-xl-12 modal-footer">
+        <button class="btn btn-success " data-dismiss="modal" type="button">
+          Comment
+        </button>
+        <button class="btn btn-success ml-auto" type="button" (click)="confirm()" (click)="hide()">
+          Approve
+        </button>
+        
+      </div>
+
+    </div>
+  </div>
+</div>

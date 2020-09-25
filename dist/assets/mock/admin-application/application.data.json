@@ -1,0 +1,115 @@
+[
+    {
+        "user_id": "49964",
+        "name": "Cortie Ferschke",
+        "file_no": "F3455-D",
+        "is_active": "Inactive",
+        "joined_at":"2019-06-19T07:38:20Z"
+    },
+    {
+        "user_id": "43060",
+        "name": "Malanie Rivilis",
+        "file_no": "F3225-D",
+        "is_active": "Active",
+        "joined_at": "2019-09-22T01:06:41Z"
+    },
+    {
+        "user_id": "71500",
+        "name": "Leslie Whittek",
+        "file_no": "F1205-D",
+        "is_active": "Active",
+        "joined_at": "2019-09-22T01:06:41Z"
+    },
+    {
+        "user_id": "90815",
+        "name": "Rubia Farquarson",
+        "file_no": "F3405-D",
+        "is_active": "Active",
+        "joined_at": "2019-09-22T01:06:41Z"
+    },
+    {
+        "user_id": "59984",
+        "name": "Rafaelita Brome",
+        "file_no": "F3005-D",
+        "is_active": "Active",
+        "joined_at": "2019-09-22T01:06:41Z"
+    },
+    {
+        "user_id": "78027",
+        "name": "Sheila-kathryn Wasielewicz",
+        "file_no": "F3455-D",
+        "is_active": "Inactive",
+        "joined_at": "2020-03-20T00:36:04Z"
+    },
+    {
+        "user_id": "52757",
+        "name": "Adelle Lomasney",
+        "file_no": "F3405-D",
+        "is_active": "Inactive",
+        "joined_at": "2020-03-20T00:36:04Z"
+    },
+    {
+        "user_id": "01800",
+        "name": "Selinda Zappel",
+        "file_no": "F3435-D",
+        "is_active": "Inactive",
+        "joined_at": "2020-03-20T00:36:04Z"
+    },
+    {
+        "user_id": "25091",
+        "name": "Doloritas Calton",
+        "file_no": "F1455-D",
+        "is_active": "Active",
+        "joined_at": "2019-10-21T02:02:15Z"
+    },
+    {
+        "user_id": "00182",
+        "name": "Jefferey Tipling",
+        "file_no": "F3255-D",
+        "is_active": "Inactive",
+        "joined_at": "2019-09-22T01:06:41Z"
+    },
+    {
+        "user_id": "93888",
+        "name": "Karlie Lamplugh",
+        "file_no": "F3453-D",
+        "is_active": "Active",
+        "joined_at": "2019-11-06T06:42:34Z"
+    },
+    {
+        "user_id": "84742",
+        "name": "Trixy Mellish",
+        "file_no": "F1455-D",
+        "is_active": "Active",
+        "joined_at": "2019-06-19T07:38:20Z"
+    },
+    {
+        "user_id": "91650",
+        "name": "Willa Blowfield",
+        "file_no": "F3555-D",
+        "is_active": "Active",
+        "joined_at": "2020-02-25T21:21:13Z"
+    },
+    {
+        "user_id": "42300",
+        "name": "Clayborne Follitt",
+        "file_no": "F3655-D",
+        "is_active": "Inactive",
+        "joined_at": "2019-06-03T00:47:44Z"
+    },
+    {
+        "user_id": "90011",
+        "name": "Katie Vail",
+        "file_no": "F3475-D",
+        "is_active": "Inactive",
+        "joined_at": "2019-06-12T03:57:12Z"
+    },
+    {
+        "user_id": "03025",
+        "name": "Penrod Seatter",
+        "file_no": "F8455-D",
+        "is_active": "Inactive",
+        "joined_at": "2020-03-13T05:50:12Z"
+    }
+
+]
